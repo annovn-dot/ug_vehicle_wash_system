@@ -1,0 +1,12 @@
+['cleaning_cloth'] = {
+		label = 'Cleaning Cloth',
+		weight = 500,
+		degrade = 10800,
+		stack = false,
+		close = true,
+		description = 'Cleans stuff',
+		client = {
+			image = 'cleaning_cloth.png',
+			event = 'ug_vehicle_wash:useItem'
+		}
+	},

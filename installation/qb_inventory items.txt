@@ -1,0 +1,12 @@
+["cleaning_cloth"] = {
+    name = "cleaning_cloth",
+    label = "Cleaning Cloth",
+    weight = 50,
+    type = "item",
+    image = "cleaning_cloth.png",
+    unique = true,
+    useable = true,
+    shouldClose = true,
+    combinable = nil,
+    description = "Cleans stuff"
+}
