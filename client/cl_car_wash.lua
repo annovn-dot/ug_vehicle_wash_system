@@ -1,15 +1,14 @@
 local ESX, QBCore, QBOX
 
-CreateThread(function()
-    if Config.Framework == "esx" then
-        ESX = exports['es_extended']:getSharedObject()
-    elseif Config.Framework == "qb" then
-        QBCore = exports['qb-core']:GetCoreObject()
-    elseif Config.Framework == "qbox" then
-        QBOX = exports['qbx-core']:GetCoreObject()
-    end
+if Config.Framework == "esx" then
+    ESX = exports['es_extended']:getSharedObject()
+elseif Config.Framework == "qb" then
+    QBCore = exports['qb-core']:GetCoreObject()
+elseif Config.Framework == "qbox" then
+    QBOX = exports['qbx-core']:GetCoreObject()
+end
 
-    -- Setup zones and blips
+CreateThread(function()
     for _, coords in pairs(Config.CarWashLocations) do
         setupCarWashZone(coords)
         createCarWashBlip(coords)
@@ -48,11 +47,6 @@ function createCarWashBlip(coords)
 end
 
 RegisterCommand("carwash", function()
-    -- if not inZone then
-    --     lib.notify({ type = "error", description = Config.CarWashNotAtLocationLabel })
-    --     return
-    -- end
-
     local ped = cache.ped
     local vehicle = GetVehiclePedIsIn(ped, false)
 

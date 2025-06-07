@@ -7,7 +7,6 @@ CreateThread(function()
             canInteract = function(entity, distance, coords, name, bone)
                 if IsPedInAnyVehicle(cache.ped, false) then return false end
 
-                -- Check if player has at least one cleaning_cloth
                 local hasItem = lib.callback.await('ug_vehicle_wash:hasCleaningCloth', false)
                 return hasItem
             end,
