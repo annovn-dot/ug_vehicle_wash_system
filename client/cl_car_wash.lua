@@ -47,6 +47,11 @@ function createCarWashBlip(coords)
 end
 
 RegisterCommand("carwash", function()
+    if not inZone then
+        -- lib.notify({ type = "error", description = "You must be at a car wash to use this." })
+        return
+    end
+
     local ped = cache.ped
     local vehicle = GetVehiclePedIsIn(ped, false)
 
