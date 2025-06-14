@@ -1,7 +1,7 @@
 Config = {}
 
-Config.Framework = "esx" -- "esx", "qb", or "qbox"
-Config.Inventory = "ox"  -- "ox" or "qb"
+Config.EnableInventoryRequirement = true
+Config.Inventory = "ox" -- "ox" or "qb"
 
 -- set this to true if you are NOT using our UG keybinds script for other scripts already
 -- in our keybinds script every keymap of every script is in one place
