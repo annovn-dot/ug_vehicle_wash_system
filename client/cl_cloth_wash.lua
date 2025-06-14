@@ -7,8 +7,12 @@ CreateThread(function()
             canInteract = function(entity, distance, coords, name, bone)
                 if IsPedInAnyVehicle(cache.ped, false) then return false end
 
-                local hasItem = lib.callback.await('ug_vehicle_wash:hasCleaningCloth', false)
-                return hasItem
+                if Config.EnableInventoryRequirement then
+                    local hasItem = lib.callback.await('ug_vehicle_wash:hasCleaningCloth', false)
+                    return hasItem
+                end
+
+                return true
             end,
             onSelect = function(data)
                 local vehicle = data.entity
