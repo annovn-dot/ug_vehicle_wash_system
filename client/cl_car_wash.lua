@@ -1,13 +1,3 @@
-local ESX, QBCore, QBOX
-
-if Config.Framework == "esx" then
-    ESX = exports['es_extended']:getSharedObject()
-elseif Config.Framework == "qb" then
-    QBCore = exports['qb-core']:GetCoreObject()
-elseif Config.Framework == "qbox" then
-    QBOX = exports['qbx-core']:GetCoreObject()
-end
-
 CreateThread(function()
     for _, coords in pairs(Config.CarWashLocations) do
         setupCarWashZone(coords)
